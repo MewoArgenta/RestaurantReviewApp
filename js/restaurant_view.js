@@ -4,7 +4,7 @@ let view = {
 
     changeFlexToRow: function (container) {
         container.style.flexDirection = 'row';
-        container.style.display = 'flex'
+        // container.style.display = 'flex'
     },
 
     changeWidthTo100: function(container){

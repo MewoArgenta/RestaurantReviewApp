@@ -151,33 +151,58 @@ createReviewHTML = (review) => {
 
   const firstRow = document.createElement('div');
   firstRow.style.display = 'flex';
-  firstRow.style.width = '100%';
+  firstRow.style.width = '80%';
   firstRow.style.justifyContent = 'space-between';
+  firstRow.style.backgroundColor = '#252831';
+  firstRow.style.alignItems = 'baseline';
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
+  name.style.fontSize = '20px';
+  name.style.color ='white';
+  name.style.fontWeight = 'strong';
+  name.style.padding = '0px 30px 0px 30px';
   firstRow.appendChild(name);
+
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
+  date.style.display = 'inline-flex';
+  date.style.color = '#ffff';
+  date.style.padding = '0px 30px 0px 30px';
   firstRow.appendChild(date);
 
   const secondRow = document.createElement('div');
   secondRow.style.display = 'flex';
-  secondRow.style.width = '100%';
+  secondRow.style.width = '80%';
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  rating.style.padding = '0px 30px 0px 30px';
+  rating.style.backgroundColor = '#fcb023';
+  rating.style.color = 'white';
+  rating.style.fontSize = '20px';
+  rating.style.fontWeight = 'strong';
+  rating.style.margin = '20px 30px';
   secondRow.appendChild(rating);
 
   const thirdRow = document.createElement('div');
   thirdRow.style.display = 'flex';
-  thirdRow.style.width = '100%';
+  thirdRow.style.width = '80%';
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.style.padding = '0px 30px 0px 30px';
   thirdRow.appendChild(comments);
 
+  firstRow.style.borderTopLeftRadius = '30px';
+  secondRow.style.backgroundColor = 'white';
+  thirdRow.style.backgroundColor = 'white';
+  thirdRow.style.marginBottom = '60px';
+  thirdRow.style.borderBottomRightRadius = '30px';
   reviewContainer.appendChild(firstRow);
   reviewContainer.appendChild(secondRow);
   reviewContainer.appendChild(thirdRow);
+
+
 
   return reviewContainer;
 }

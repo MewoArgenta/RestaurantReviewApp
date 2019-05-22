@@ -10,7 +10,7 @@
   <title>Restaurant Info</title>
 </head>
 
-<body class="inside">
+<body>
 
   <div class="container">
     <!-- Beginning header -->
@@ -29,33 +29,30 @@
     <!-- End header -->
 
     <!-- Beginning main -->
-    <main id="maincontent">
+    <main>
 
       <!-- Beginning map -->
-      <section id="map-container">
-        <div id="map"></div>
-
-        <!-- Beginning restaurant -->
-
-        <section id="restaurant-container">
-          <h1 id="restaurant-name"></h1>
-          <img id="restaurant-img">
-          <p id="restaurant-cuisine"></p>
-          <p id="restaurant-address"></p>
-          <table id="restaurant-hours"></table>
-        </section>
-        <!-- end restaurant -->
-        <!-- Beginning reviews -->
-        <section id="reviews-container">
-          <ul id="reviews-list"></ul>
-        </section>
-        <!-- End reviews -->
-
-      </section>
-
+      <div class="map-container">
+        <div id="map">
+        </div>
+        <!-- End map -->
+      </div>
+      <!-- Beginning restaurant -->
+      <div id="restaurant-container">
+        <h1 id="restaurant-name"></h1>
+        <img id="restaurant-img">
+        <p id="restaurant-cuisine"></p>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours"></table>
+      </div>
+      <!-- end restaurant -->
+      <!-- Beginning reviews -->
+      <div id="reviews-container">
+        <ul id="reviews-list"></ul>
+      </div>
+      <!-- End reviews -->
 
 
-      <!-- End map -->
     </main>
     <!-- End main -->
 

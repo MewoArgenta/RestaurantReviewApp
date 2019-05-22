@@ -4,7 +4,7 @@ let view = {
 
     changeFlexToColumn: function (container) {
         container.style.flexDirection = 'column';
-        container.style.display = 'flex'
+        // container.style.display = 'flex'
     },
 
     whenmainPageOpens: window.addEventListener('pageshow', function () {
