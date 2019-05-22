@@ -165,14 +165,17 @@ createRestaurantHTML = (restaurant) => {
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  name.style.backgroundColor = 'white';
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.style.backgroundColor = 'white';
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.style.backgroundColor = 'white';
   li.append(address);
 
   const more = document.createElement('a');
