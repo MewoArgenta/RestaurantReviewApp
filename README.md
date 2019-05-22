@@ -24,6 +24,9 @@ sudo kill -9 <PID>
 2. now you can host the website on port 8000:
 In the terminal of intellij: python -m SimpleHTTPServer 8000
 
+For my windows:
+python -m http.server 8000
+
 
 
 1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.

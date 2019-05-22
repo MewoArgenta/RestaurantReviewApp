@@ -168,7 +168,7 @@ createReviewHTML = (review) => {
   const date = document.createElement('p');
   date.innerHTML = review.date;
   date.style.display = 'inline-flex';
-  date.style.color = '#ffff';
+  date.style.color = 'white';
   date.style.padding = '0px 30px 0px 30px';
   firstRow.appendChild(date);
 

@@ -1,3 +1,13 @@
+//make the filter image a button to make the filter options slide over
+let filterButton = document.getElementById('filter-button');
+filterButton.addEventListener('click',function(){
+  let filterOptions = document.getElementsByClassName('filter-options')[0];
+  filterOptions.style.display = 'flex';
+});
+
+
+
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -156,34 +166,38 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
-  const li = document.createElement('li');
+  const tile = document.createElement('div');
+  tile.className = 'restaurant-tile';
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  li.append(image);
+  tile.append(image);
+
+  const divForBackGround = document.createElement('div');
+  divForBackGround.className = 'restaurant-details-tile';
+  divForBackGround.style.backgroundColor = 'white';
+  tile.append(divForBackGround);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
-  name.style.backgroundColor = 'white';
-  li.append(name);
+  name.style.marginTop = '0';
+  divForBackGround.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  neighborhood.style.backgroundColor = 'white';
-  li.append(neighborhood);
+  divForBackGround.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  address.style.backgroundColor = 'white';
-  li.append(address);
+  divForBackGround.append(address);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  divForBackGround.append(more)
 
-  return li
+  return tile
 }
 
 /**
