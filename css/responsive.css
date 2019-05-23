@@ -1,3 +1,63 @@
-@media only screen and (max-width: 445px) {
+@media only screen and (max-width: 340px) {
+
+    h1 {
+        width: 60%;
+    }
+
+    .filter-options {
+        width: 40%;
+    }
+}
+
+
+
+@media only screen and (min-width: 340px) {
+
+
+    h1 {
+        width: 50%;
+    }
+
+    .filter-options {
+        width: 40%;
+    }
 
 }
+
+@media only screen and (min-width: 400px) {
+    h1 {
+        width: auto;
+    }
+
+    .filter-options {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+
+    .filter-options {
+        width: 25%;
+    }
+}
+
+
+@media only screen and (min-width: 780px) {
+
+    .filter-options {
+        width: 18%;
+    }
+
+    .map-container {
+        width: 780px;
+        height: 600px;
+    }
+
+    body {
+        width: 780px;
+        margin: auto;
+    }
+}
+
+
+

@@ -1,5 +1,4 @@
 //make the filter image a button to make the filter options slide over
-let filterButton = document.getElementById('filter-button');
 // jquery function to slidetoggle
 //
 $(function()
@@ -10,6 +9,17 @@ $(function()
     return false;
   });
 });
+
+$(function()
+{
+  $("#arrow-hide").click( function(){
+    console.log('im running')
+    $(".filter-options").toggle('slide' );
+    return false;
+  });
+});
+
+
 
 
 
@@ -201,6 +211,7 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.style.fontWeight = '900';
   divForBackGround.append(more)
 
   return tile
