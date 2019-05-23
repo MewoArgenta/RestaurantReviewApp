@@ -1,8 +1,14 @@
 //make the filter image a button to make the filter options slide over
 let filterButton = document.getElementById('filter-button');
-filterButton.addEventListener('click',function(){
-  let filterOptions = document.getElementsByClassName('filter-options')[0];
-  filterOptions.style.display = 'flex';
+// jquery function to slidetoggle
+//
+$(function()
+{
+  $("#filter-button").click( function(){
+    console.log('im running')
+    $(".filter-options").toggle('slide' );
+    return false;
+  });
 });
 
 
