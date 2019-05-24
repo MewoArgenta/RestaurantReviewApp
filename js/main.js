@@ -4,7 +4,6 @@
 $(function()
 {
   $("#filter-button").click( function(){
-    console.log('im running')
     $(".filter-options").toggle('slide' );
     return false;
   });
@@ -13,7 +12,6 @@ $(function()
 $(function()
 {
   $("#arrow-hide").click( function(){
-    console.log('im running')
     $(".filter-options").toggle('slide' );
     return false;
   });
@@ -243,3 +241,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+// sregister the serviceworker if browser supports it
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('js/sw/index.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
