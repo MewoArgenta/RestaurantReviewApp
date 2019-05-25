@@ -162,7 +162,13 @@ class DBHelper {
       {title: restaurant.name,
       alt: restaurant.name,
       url: DBHelper.urlForRestaurant(restaurant)
-      })
+      });
+      // marker._icon.addEventListener('keydown',function (e) {
+      //   console.log('eventListener added')
+      //   if (e.key === 'Enter' || e.key === ' ') {
+      //     window.open (' http://localhost:8000/restaurant.html'+'?id='+i)
+      //   }
+      // });
       marker.addTo(newMap);
     return marker;
   }

@@ -1,3 +1,8 @@
+
+
+
+
+
 //make the filter image a button to make the filter options slide over
 // jquery function to slidetoggle
 //
@@ -17,7 +22,36 @@ $(function()
   });
 });
 
+//add key event listeners for the elements with aria role = button
+let filterButton = document.getElementById('filter-button');
+let hideFilterOptions = document.getElementById('arrow-hide');
+// when space or enter is hit on keyboard, the element will react the same way as when a click event happens
+filterButton.addEventListener('keydown', function (e) {
+  // see comment above setMarketIconKeyEvents, it is most likely that the user will go to the markers
+  // after passing the filter element
+  if (e.key === 'Enter' || e.key === ' ') {
+    $(".filter-options").toggle('slide' );
+    $("#neighborhoods-select").focus();
+  }
+});
 
+hideFilterOptions.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    $(".filter-options").toggle('slide' );
+    let firstMarker = document.getElementsByClassName('leaflet-marker-icon')[0];
+    firstMarker.focus();
+    }
+});
+
+
+
+function setMarkerAriaRole () {
+  let markerIcons = document.getElementsByClassName('leaflet-marker-icon');
+  for (let i = 0; i<markerIcons.length; i++) {
+    let marker = markerIcons[i];
+    marker.setAttribute('role','link')
+  }
+}
 
 
 
@@ -109,7 +143,6 @@ initMap = () => {
       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(newMap);
-
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -208,6 +241,7 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.setAttribute('aria-label', 'view details of ' + restaurant.name)
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.style.fontWeight = '900';
   divForBackGround.append(more)
@@ -226,8 +260,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     function onClick() {
       window.location.href = marker.options.url;
     }
+    marker.on('keypress', function (e) {
+      if (e.originalEvent.key === 'Enter' || e.key === ' ') {
+        window.location.href = marker.options.url;
+      }
+    });
     self.markers.push(marker);
   });
+  setMarkerAriaRole();
 
 }
 /* addMarkersToMap = (restaurants = self.restaurants) => {
@@ -254,3 +294,16 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+
+//Because the map is drawn in a script that is reached via internet I can not set the attributes of this map.
+//For this reason I first call the element when it's drawn to adapt it.
+// instead of giving the element the right attribute before it is appended.
+window.onload = () => {
+  let zoomIn = document.getElementsByClassName('leaflet-control-zoom-in')[0];
+  let zoomOut = document.getElementsByClassName('leaflet-control-zoom-out')[0];
+  zoomIn.setAttribute('tabindex', '3');
+  zoomOut.setAttribute('tabindex','4');
+};
+
+
