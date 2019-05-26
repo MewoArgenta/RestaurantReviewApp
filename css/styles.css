@@ -176,6 +176,8 @@ select{
   background-color: white;
   border-bottom-right-radius: 30px;
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .restaurant-img {

@@ -8,8 +8,8 @@
 //
 $(function()
 {
-  $("#filter-button").click( function(){
-    $(".filter-options").toggle('slide' );
+  $('#filter-button').click( function(){
+    $('.filter-options').toggle('slide' );
     return false;
   });
 });
@@ -26,23 +26,27 @@ $(function()
 let filterButton = document.getElementById('filter-button');
 let hideFilterOptions = document.getElementById('arrow-hide');
 // when space or enter is hit on keyboard, the element will react the same way as when a click event happens
-filterButton.addEventListener('keydown', function (e) {
+filterButton.addEventListener('keypress', function (e) {
   // see comment above setMarketIconKeyEvents, it is most likely that the user will go to the markers
   // after passing the filter element
   if (e.key === 'Enter' || e.key === ' ') {
-    $(".filter-options").toggle('slide' );
+    $('.filter-options').toggle('slide' );
     $("#neighborhoods-select").focus();
   }
 });
 
+//for some reason when I do .focus() marker.on('keypress') also registers the keypress
+//for this reason I added a workaround: avoidMarkerRegistersPress who will be registered to true when .focus()
+// is called to the marker
+let avoidMarkerRegistersPress = false;
 hideFilterOptions.addEventListener('keydown', function (e) {
   if (e.key === 'Enter' || e.key === ' ') {
-    $(".filter-options").toggle('slide' );
-    let firstMarker = document.getElementsByClassName('leaflet-marker-icon')[0];
-    firstMarker.focus();
+    $('.filter-options').toggle('slide' );
+    avoidMarkerRegistersPress = true;
+    let markerIcons = $('.leaflet-marker-icon');
+    markerIcons[0].focus();
     }
 });
-
 
 
 function setMarkerAriaRole () {
@@ -256,12 +260,18 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
-    marker.on("click", onClick);
+    marker.on('click', onClick);
     function onClick() {
       window.location.href = marker.options.url;
     }
     marker.on('keypress', function (e) {
-      if (e.originalEvent.key === 'Enter' || e.key === ' ') {
+      // this avoids us from registering the enter on the hide function as an enter on the marker.
+      // Ofcourse it should immediately change to false.
+      if (avoidMarkerRegistersPress){
+        avoidMarkerRegistersPress = false;
+        return;
+      }
+      if (e.originalEvent.key === 'Enter' || e.originalEvent.key === ' ') {
         window.location.href = marker.options.url;
       }
     });
@@ -305,5 +315,7 @@ window.onload = () => {
   zoomIn.setAttribute('tabindex', '3');
   zoomOut.setAttribute('tabindex','4');
 };
+
+
 
 
