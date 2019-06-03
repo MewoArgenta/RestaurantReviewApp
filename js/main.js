@@ -222,6 +222,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = 'photo of ' + restaurant.name;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   tile.append(image);
 
@@ -230,7 +231,7 @@ createRestaurantHTML = (restaurant) => {
   divForBackGround.style.backgroundColor = 'white';
   tile.append(divForBackGround);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   name.style.marginTop = '0';
   divForBackGround.append(name);
@@ -245,10 +246,14 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
-  more.setAttribute('aria-label', 'view details of ' + restaurant.name)
+  more.setAttribute('aria-label', 'view details of ' + restaurant.name);
+  more.setAttribute('role', 'button');
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.style.fontWeight = '900';
-  divForBackGround.append(more)
+  more.style.color = 'white';
+  more.style.backgroundColor = '#aa2b14';
+  more.style.width = '30%';
+  divForBackGround.append(more);
 
   return tile
 }
@@ -295,7 +300,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('js/sw/index.js').then(function(registration) {
+    navigator.serviceWorker.register('index.js').then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {

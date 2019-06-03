@@ -8,7 +8,7 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 8000 // Change this to your server port
+    const port = 9000 // Change this to your server port
     return `http://localhost:${port}/data/restaurants.json`;
   }
 
@@ -166,7 +166,7 @@ class DBHelper {
       // marker._icon.addEventListener('keydown',function (e) {
       //   console.log('eventListener added')
       //   if (e.key === 'Enter' || e.key === ' ') {
-      //     window.open (' http://localhost:8000/restaurant.html'+'?id='+i)
+      //     window.open (' http://localhost:9000/restaurant.html'+'?id='+i)
       //   }
       // });
       marker.addTo(newMap);

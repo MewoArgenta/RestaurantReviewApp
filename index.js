@@ -4,13 +4,13 @@
 // the scope of the cached files
 var CACHE_NAME = 'restaurant-review-cache-v1';
 var urlsToCache = [
-    '../../index.html',
-    '../../restaurant.html',
-    '../../css/styles.css',
-    '../../css/responsive.css',
-    '../../js/dbhelper.js',
-    '../../js/restaurant_info.js',
-    '../../js/main.js',
+    '/index.html',
+    '/restaurant.html',
+    '/css/styles.css',
+    '/css/responsive.css',
+    '/js/dbhelper.js',
+    '/js/restaurant_info.js',
+    '/js/main.js',
 ];
 
 // Inside of our install callback, we need to take the following steps:

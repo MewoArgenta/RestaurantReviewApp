@@ -13,14 +13,14 @@
 <body>
   <div class="container">
     <header>
-      <nav>
-        <h1 id="document-title"><a tabindex="1" href="/">Restaurant Reviews</a></h1>
+      <nav class="title-row" role="navigation">
+        <h1 id="document-title"><a id="header-link" tabindex="1" href="/">Restaurant Reviews</a></h1>
       </nav>
     </header>
 
     <main>
       <div class="map-container">
-        <div id="map" aria-label="map" tabindex="2">
+        <div id="map" aria-label="location" role="application" tabindex="2">
           <img src="img/filter.png" alt="filter neighborhoods and restaurant types" id="filter-button" role="button" tabindex="0">
           <div class="filter-options">
             <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -33,8 +33,8 @@
           </div>
         </div>
   </div>
-      <div>
-        <div id="restaurants-list"></div>
+      <div id="restaurants-list">
+
       </div>
     </main>
 <!--      I need a function to be run sequently after this script so I moved it to main.js-->
@@ -46,7 +46,7 @@
 
 
     <footer id="footer">
-      Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+      Copyright (c) 2017 <a class="link-footer" href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
   </div>
 </body>

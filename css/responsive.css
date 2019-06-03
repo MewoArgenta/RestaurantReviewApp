@@ -7,6 +7,10 @@
     .filter-options {
         width: 40%;
     }
+
+    #restaurants-list {
+        display: block;
+    }
 }
 
 
@@ -20,6 +24,10 @@
 
     .filter-options {
         width: 40%;
+    }
+
+    #restaurants-list {
+        display: block;
     }
 
 }
@@ -54,8 +62,17 @@
     }
 
     body {
-        width: 780px;
-        margin: auto;
+        width: 100%;
+        margin: 10px;
+    }
+
+    #restaurants-list {
+        display: flex;
+    }
+
+    .restaurant-tile {
+        width: 20%;
+        height: auto;
     }
 }
 
