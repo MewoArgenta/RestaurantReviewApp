@@ -2,8 +2,6 @@
 /* CSS Document */
 
 
-
-
 .container {
     display: flex;
     width: 100%;
@@ -26,21 +24,17 @@ ul, li {
     font-size: 10pt;
     color: #333;
 }
-
-link-footer {
+a {
     color: orange;
     text-decoration: none;
 }
-
 a:hover, a:focus {
     color: #3397db;
     text-decoration: none;
 }
-
-a img {
+a img{
     border: none 0px #fff;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -58,48 +52,31 @@ footer {
     text-align: center;
     text-transform: uppercase;
 }
-
-
-
-.title-row {
+/* ====================== Navigation ====================== */
+nav {
     width: 100%;
     height: 80px;
     background-color: #252831;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #252831;
 }
 
-#header-link {
-    color: white;
+
+nav h1 a {
+    color: #fff;
     font-size: 14pt;
     font-weight: 200;
     letter-spacing: 10px;
     text-transform: uppercase;
-    text-decoration: none;
-}
-
-.breadcrumb-row {
-    padding: 10px 40px 16px;
-    list-style: none;
-    background-color: #eee;
-    font-size: 17px;
-    margin: 0;
-}
-
-
-a {
-    color: orange;
-    text-decoration: none;
 }
 
 #breadcrumb {
+    padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    padding: 10px 40px 16px;
 }
 
 /* Display list items side by side */
@@ -134,7 +111,6 @@ a {
     justify-content: flex-end;
 }
 /* ====================== Restaurant Filtering ====================== */
-/*TO DO http://jsfiddle.net/dJS4g/*/
 
 .filter-options {
     width: 30%;
@@ -189,8 +165,8 @@ select{
 
 .restaurant-tile {
     width: 70%;
+    margin: auto;
     padding-bottom: 30px;
-    padding: 10px;
 }
 
 .restaurant-details-tile {
@@ -211,12 +187,13 @@ select{
 #restaurants-list {
     background-color: #f3f3f3;
     list-style: outside none none;
+    /*margin: 0;*/
     text-align: center;
     justify-content: center;
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
 }
+
 #restaurants-list li {
     /*background-color: #fff;*/
     /*border: 2px solid #ccc;*/
@@ -257,9 +234,10 @@ select{
 }
 
 /* ====================== Restaurant Details ====================== */
+
 .map-container {
     height: 90vw;
-    width: 100%;
+    padding: 20px;
     padding-bottom: 30px;
     background-color: #f3f3f3;
 }
@@ -287,7 +265,8 @@ select{
 
 #restaurant-address {
     font-size: 12pt;
-    margin: 10px 0px;
+    font-weight: 900;
+    margin-bottom: 30px;
 }
 #restaurant-cuisine {
     background-color: #333;
@@ -308,9 +287,8 @@ select{
 }
 
 #restaurant-container{
-    width: 80%;
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
 }
 
 #reviews-container {
@@ -323,15 +301,6 @@ select{
     letter-spacing: -1px;
     padding-bottom: 1pt;
 }
-
-h3 {
-    color: #f58500;
-    font-size: 20pt;
-    font-weight: 300;
-    letter-spacing: -1px;
-    padding-bottom: 1pt;
-}
-
 #reviews-list {
     margin: 0;
     padding: 0;
@@ -347,7 +316,7 @@ h3 {
     padding: 0 20px 20px;
     width: 85%;
 }
-#reviews-list  {
+#reviews-list p {
     margin: 0 0 10px;
 }
 #restaurant-hours td {
@@ -361,7 +330,3 @@ h3 {
     padding: 30px;
     z-index: 1000;
 }
-
-
-
-

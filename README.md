@@ -16,4 +16,3 @@
 3. If this port is already in use, follow next linux commands:
     - `sudo lsof -i tcp:8000`  to check which PID is using the port.
     - `sudo kill -9 <PID>`  to terminate the process that is occupying this port.
-3. With your server running, visit the site: `http://localhost:8000` in the browser of your choice.

@@ -27,8 +27,7 @@ let filterButton = document.getElementById('filter-button');
 let hideFilterOptions = document.getElementById('arrow-hide');
 // when space or enter is hit on keyboard, the element will react the same way as when a click event happens
 filterButton.addEventListener('keypress', function (e) {
-  // see comment above setMarketIconKeyEvents, it is most likely that the user will go to the markers
-  // after passing the filter element
+
   if (e.key === 'Enter' || e.key === ' ') {
     $('.filter-options').toggle('slide' );
     $("#neighborhoods-select").focus();

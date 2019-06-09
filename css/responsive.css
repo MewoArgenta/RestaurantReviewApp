@@ -8,6 +8,28 @@
         width: 40%;
     }
 
+
+    .restaurant-tile {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .map-container {
+        padding: 10px;
+    }
+
+    #restaurant-container {
+        flex-direction: column;
+    }
+
+    #restaurant-container-part-1{
+        width: 100%;
+    }
+
+    #restaurant-container-part-2 {
+        width: 100%;
+    }
+
     #restaurants-list {
         display: block;
     }
@@ -26,6 +48,28 @@
         width: 40%;
     }
 
+
+    .restaurant-tile {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .map-container {
+        padding: 10px;
+    }
+
+    #restaurant-container {
+        flex-direction: column;
+    }
+
+    #restaurant-container-part-1{
+        width: 100%;
+    }
+
+    #restaurant-container-part-2 {
+        width: 100%;
+    }
+
     #restaurants-list {
         display: block;
     }
@@ -40,6 +84,15 @@
     .filter-options {
         width: 30%;
     }
+
+    .restaurant-tile {
+        width: 40%;
+        padding: 10px;
+    }
+
+    .map-container {
+        padding: 10px;
+    }
 }
 
 @media only screen and (min-width: 500px) {
@@ -47,18 +100,53 @@
     .filter-options {
         width: 25%;
     }
+
+    .restaurant-tile {
+        width: 40%;
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 610px) {
+
+    .filter-options {
+        width: 25%;
+    }
+
+    .restaurant-tile {
+        width: 25%;
+        padding: 15px;
+    }
+
+    #restaurant-container {
+        flex-direction: row;
+    }
+
+    #restaurant-container-part-1{
+        width: 45%;
+    }
+
+    #restaurant-container-part-2 {
+        width: 45%;
+        padding-left: 20px;
+    }
 }
 
 
-@media only screen and (min-width: 780px) {
+
+@media only screen and (min-width: 800px) {
 
     .filter-options {
         width: 18%;
     }
 
     .map-container {
-        width: 780px;
         height: 600px;
+    }
+
+    .restaurant-tile {
+        width: 20%;
+        padding: 20px;
     }
 
     body {
@@ -73,8 +161,6 @@
     .restaurant-tile {
         width: 20%;
         height: auto;
+
     }
 }
-
-
-
