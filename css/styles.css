@@ -264,7 +264,7 @@ select{
     height: 100%;
     width: 100%;
 }
-#restaurant-name {
+#restaurant-name, h3 {
     color: #f18200;
     font-family: Arial,sans-serif;
     font-size: 20pt;
