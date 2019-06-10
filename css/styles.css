@@ -53,23 +53,35 @@ footer {
     text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
-nav {
+.title-row {
     width: 100%;
     height: 80px;
     background-color: #252831;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
+
 }
 
-
-nav h1 a {
+#header-link {
     color: #fff;
+    font-weight: 200;
     font-size: 14pt;
     font-weight: 200;
     letter-spacing: 10px;
-    text-transform: uppercase;
 }
+
+/*nav {*/
+
+/*}*/
+
+
+/*nav h1 a {*/
+/*    font-size: 14pt;*/
+/*    font-weight: 200;*/
+/*    letter-spacing: 10px;*/
+/*}*/
 
 #breadcrumb {
     padding: 10px 40px 16px;

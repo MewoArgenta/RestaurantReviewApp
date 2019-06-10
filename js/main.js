@@ -238,9 +238,11 @@ createRestaurantHTML = (restaurant) => {
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
   divForBackGround.append(neighborhood);
+  neighborhood.style.marginBottom = '0px';
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.style.marginBottom = '40px';
   divForBackGround.append(address);
 
   const more = document.createElement('a');
@@ -252,6 +254,7 @@ createRestaurantHTML = (restaurant) => {
   more.style.color = 'white';
   more.style.backgroundColor = '#aa2b14';
   more.style.width = '30%';
+  more.style.margin = 'auto';
   divForBackGround.append(more);
 
   return tile
